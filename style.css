@@ -1,0 +1,172 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: orangered;
+    transition: 0.5s;
+}
+body.active {
+    background: green;
+}
+.container {
+    position: relative;
+    width: 800px;
+    height: 500px;
+    margin: 20px;
+
+}
+.blueBg {
+    position: absolute;
+    width: 100%;
+    top: 40px;
+    height: 420px;
+    background: rgba(255,255,255,0.2);
+    box-shadow:0 5px 45px rgba(0, 0, 0, 0.15);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box {
+    display: flex;
+    flex-direction: column;
+}
+
+.blueBg .box {
+    position: relative;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: b;
+}
+
+.blueBg .box  h2 {
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+.blueBg .box button {
+     cursor: pointer;
+     padding: 15px 32px;
+     color: #333;
+     background: white;
+     font-size: 15px;
+     font-weight: 600;
+     border: none;
+}
+.formBx {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background-color: white;
+    z-index: 1000;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 5px 45px rgba(0,0,0, 0.25);
+    transition: 0.5s ease-in-out;
+    overflow: hidden;
+}
+.formBx.active {
+    left: 50%;
+}
+.formBx .form {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    padding: 50px;
+    transition: 0.5s;
+}
+
+.formBx.active .signInForm {
+    left: -100%;
+    transition-delay: 0s;
+}
+.formBx .signInForm {
+    transition-delay: 0.10s;
+}
+
+.formBx .signUpForm {
+    left:100%;
+    transition-delay: 0s;
+} 
+.formBx.active .signUpForm {
+    left: 0;
+}
+
+.formBx .form form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.formBx .form form h3 {
+    font-size: 2.2rem;
+    color: #333;
+    margin-bottom: 22px;
+    font-weight: 600;
+    text-align: center;
+}
+.formBx .form form input  {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 12px;
+    outline: none;
+    border: 1px solid #333;
+}
+.formBx .form form input[type="submit"] {
+    background: orangered;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}
+.formBx.active .signUpForm input[type="submit"] {
+    background: green;
+}
+.formBx .form form .forgot {
+    color: #333;
+    text-align: center;
+}
+
+@media (max-width:991px) {
+    .container {
+        max-width: 400px;
+        height: 650px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .container .blueBg {
+        top: 0;
+        height: 100%;
+    }
+    .formBx {
+        width: 100%;
+        height: 500px;
+        top: 0;
+        box-shadow: none;
+    }
+    .blueBg .box {
+        position: absolute;
+        width: 100%;
+        height: 150px;
+        bottom: 0;
+    }
+    .box.signin {
+        top:0;
+    }
+    .formBx.active {
+        left: 0;
+        top: 150px;
+    }
+
+}
